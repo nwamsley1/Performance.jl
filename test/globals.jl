@@ -1,5 +1,6 @@
 using Performance
 using Test
+using Cthulhu
 
 @testset "globals" begin
     @test getchar(5) == 'e'                # this should pass from the beginning

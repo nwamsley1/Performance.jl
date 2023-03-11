@@ -1,13 +1,14 @@
 export getchar, set_homedir, get_homedir
 
-charset = 'a':'z'
+charset::StepRange{Char, Int64} = 'a':'z'
 
 getchar(idx) = charset[idx]
 
-homedir = "wrong"
+homedir::Ref{String} = Ref("wrong")
 
 function set_homedir(path)
-    global homedir = path
+    global homedir = Ref{String}(path)
 end
-get_homedir() = homedir
+
+get_homedir()::String = homedir[]
 
